@@ -1,0 +1,102 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("ef3c7448-fef4-44f4-9017-8b422ebea783",
+	'FlowPath',
+	8,
+	'FlowPath',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("7aac55bd-e1d7-40f3-aade-8f347e2225a7",
+	"ef3c7448-fef4-44f4-9017-8b422ebea783",
+	'FindPath',
+	'Search for a path between specified tanks, building a set of intervening valves which control the path.',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'create object instance path of FlowPath;
+select any start from instances of Tank
+ where ( selected.TankIdentifier == param.From );
+select any finish from instances of Tank
+ where ( selected.TankIdentifier == param.To );
+relate start to finish across R5.''starts from'' using path;
+
+select many pipeEnds from instances of PipeEnd;
+for each pipeEnd in pipeEnds
+  pipeEnd.seen = false;
+end for;
+                                
+select many valveEnds from instances of ValveEnd;
+for each valveEnd in valveEnds
+  valveEnd.seen = false;
+end for;
+
+success = false;
+select many valveEnds related by start->ValveEnd[R3.''is accessed through''];
+for each valveEnd in valveEnds 
+  success = valveEnd.FindPath( Start:param.From, Destination:param.To );
+  if ( success )
+  	break;
+  end if; 
+end for;
+
+if ( success )
+  LOG::LogSuccess( message:"Path found from " + param.From + " to " + param.To );
+  LOG::LogSuccess( message:"Opening valves" );
+  select many valves related by path->Valve[R6.''traverses''];
+  for each valve in valves
+  	LOG::LogInfo( message:valve.Name );
+  	valve.Open = true;
+    unrelate valve from path across R6.''is in a connected'';
+  end for;
+else
+  LOG::LogFailure( message:"No path found from " + param.From + " to " + param.To );
+end if;
+unrelate start from finish across R5.''starts from'' using path;
+delete object instance path;
+                                	                                ',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("cf830102-f577-4e8c-8c0d-c6eb7bc0c3dd",
+	"7aac55bd-e1d7-40f3-aade-8f347e2225a7",
+	'From',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("90c5aa6f-13ee-4ec2-a070-99e009ef1121",
+	"7aac55bd-e1d7-40f3-aade-8f347e2225a7",
+	'To',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"cf830102-f577-4e8c-8c0d-c6eb7bc0c3dd",
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"ef3c7448-fef4-44f4-9017-8b422ebea783");
+INSERT INTO O_ID
+	VALUES (1,
+	"ef3c7448-fef4-44f4-9017-8b422ebea783");
+INSERT INTO O_ID
+	VALUES (2,
+	"ef3c7448-fef4-44f4-9017-8b422ebea783");
+INSERT INTO PE_PE
+	VALUES ("ef3c7448-fef4-44f4-9017-8b422ebea783",
+	1,
+	"50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
+	'TankFarm',
+	'',
+	0,
+	'../TankFarm.xtuml');

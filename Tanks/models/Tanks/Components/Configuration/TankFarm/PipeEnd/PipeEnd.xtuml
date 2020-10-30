@@ -1,0 +1,126 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("17b18e31-1e24-4787-a808-0e757e4fa330",
+	'PipeEnd',
+	7,
+	'PipeEnd',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("aea1f329-6388-4f3d-9c60-d758f6fda4c3",
+	"17b18e31-1e24-4787-a808-0e757e4fa330",
+	'FindPath',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'success = false;
+tankName = "";
+self.seen = true;
+//select one valveEnd related by self->ValveEnd[R2.''attaches to'']
+// where ( not selected.seen );
+select one valveEnd related by self->ValveEnd[R2.''attaches to''];
+if ( not_empty valveEnd )
+ if ( not valveEnd.seen )
+  tankName = valveEnd.FindTank();
+  if ( tankName != "" )
+    if ( tankName == param.Destination )
+      success = true;
+      valveEnd.AddValve();
+    end if;
+   end if;
+  else
+    // look for pipeEnd the other side of the valve
+  end if;
+end if;
+
+if ( not success )
+
+  select many pipeEnds related by self->PipeEnd[R4.''connects to''];
+  for each pipeEnd in pipeEnds
+    if ( not pipeEnd.seen )
+      success = pipeEnd.FindPath( Start:param.Start, Destination:param.Destination );
+      if ( success )
+        break;
+      end if;
+    end if;
+    LOG::LogInfo( message:"here" );
+  end for;
+  LOG::LogInfo( message:"exited first loop" );
+  if ( not success )
+    select many pipeEnds related by self->PipeEnd[R4.''attaches to''];
+    for each pipeEnd in pipeEnds
+      if ( not pipeEnd.seen )
+        success = pipeEnd.FindPath( Start:param.Start, Destination:param.Destination );
+        if ( success )
+          break;
+        end if;
+      end if;
+    end for;
+  end if;
+
+end if;
+return success;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("80d13025-8ec2-4b02-aa81-198c30f2624b",
+	"aea1f329-6388-4f3d-9c60-d758f6fda4c3",
+	'Destination',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"75fe9d7e-9435-4b1f-a70c-e7f1f878f9cc",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("75fe9d7e-9435-4b1f-a70c-e7f1f878f9cc",
+	"aea1f329-6388-4f3d-9c60-d758f6fda4c3",
+	'Start',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("941711c8-e744-4169-a028-e5948a700a17",
+	"17b18e31-1e24-4787-a808-0e757e4fa330");
+INSERT INTO O_BATTR
+	VALUES ("941711c8-e744-4169-a028-e5948a700a17",
+	"17b18e31-1e24-4787-a808-0e757e4fa330");
+INSERT INTO O_ATTR
+	VALUES ("941711c8-e744-4169-a028-e5948a700a17",
+	"17b18e31-1e24-4787-a808-0e757e4fa330",
+	"00000000-0000-0000-0000-000000000000",
+	'seen',
+	'',
+	'',
+	'seen',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"17b18e31-1e24-4787-a808-0e757e4fa330");
+INSERT INTO O_ID
+	VALUES (1,
+	"17b18e31-1e24-4787-a808-0e757e4fa330");
+INSERT INTO O_ID
+	VALUES (2,
+	"17b18e31-1e24-4787-a808-0e757e4fa330");
+INSERT INTO PE_PE
+	VALUES ("17b18e31-1e24-4787-a808-0e757e4fa330",
+	1,
+	"50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
+	'TankFarm',
+	'',
+	0,
+	'../TankFarm.xtuml');

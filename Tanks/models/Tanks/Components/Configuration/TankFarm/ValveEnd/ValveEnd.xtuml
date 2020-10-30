@@ -1,0 +1,150 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
+	'ValveEnd',
+	5,
+	'ValveEnd',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("14f6b645-2f9d-4da0-b859-75e0a7014cf1",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	'FindPath',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'success = false;
+select one valveEnd related by self->ValveEnd[R1.''is one side of''];
+if ( empty valveEnd )
+  select one valveEnd related by self->ValveEnd[R1.''is other side of''];
+end if;
+valveEnd.seen = true;
+select one pipeEnd related by valveEnd->PipeEnd[R2.''is attached to''];
+success = pipeEnd.FindPath( Start:param.Start, Destination:param.Destination );
+
+if ( success )
+  self.AddValve();
+end if;
+return success;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("4e2b5619-bc71-41ca-8cbf-609f88dad3b5",
+	"14f6b645-2f9d-4da0-b859-75e0a7014cf1",
+	'Destination',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"8773689c-483b-4064-8e15-e8a5fc6ec199",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("8773689c-483b-4064-8e15-e8a5fc6ec199",
+	"14f6b645-2f9d-4da0-b859-75e0a7014cf1",
+	'Start',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TFR
+	VALUES ("2967108e-ad84-4af8-b368-3a9845eac0d5",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	'AddValve',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'  select one valve related by self->Valve[R1.''is one side of''];
+  if ( empty valve )
+    select one valve related by self->Valve[R1.''is other side of''];
+  end if;
+  select any path from instances of FlowPath; 
+  relate valve to path across R6;
+',
+	1,
+	'',
+	"14f6b645-2f9d-4da0-b859-75e0a7014cf1",
+	0);
+INSERT INTO O_TFR
+	VALUES ("5880c536-b954-45c4-947c-61789e0bd08d",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	'FindTank',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	1,
+	'
+  select one valveEnd related by self->ValveEnd[R1.''is one side of''];
+  if ( empty valveEnd )
+    select one valveEnd related by self->ValveEnd[R1.''is other side of''];
+  end if;
+  select one tank related by valveEnd->Tank[R3.''acesses''];
+  if ( not_empty tank )
+    return tank.TankIdentifier;
+  else
+    return "";
+  end if;',
+	1,
+	'',
+	"2967108e-ad84-4af8-b368-3a9845eac0d5",
+	0);
+INSERT INTO O_NBATTR
+	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_BATTR
+	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_ATTR
+	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"00000000-0000-0000-0000-000000000000",
+	'Name',
+	'',
+	'',
+	'Name',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("95b02bde-863c-463d-a13f-9be8268eef12",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_BATTR
+	VALUES ("95b02bde-863c-463d-a13f-9be8268eef12",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_ATTR
+	VALUES ("95b02bde-863c-463d-a13f-9be8268eef12",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	'seen',
+	'',
+	'',
+	'seen',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_ID
+	VALUES (1,
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_ID
+	VALUES (2,
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO PE_PE
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
+	1,
+	"50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
+	'TankFarm',
+	'',
+	0,
+	'../TankFarm.xtuml');
