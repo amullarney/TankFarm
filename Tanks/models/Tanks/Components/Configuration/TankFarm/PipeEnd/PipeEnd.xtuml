@@ -21,44 +21,42 @@ self.seen = true;
 // where ( not selected.seen );
 select one valveEnd related by self->ValveEnd[R2.''attaches to''];
 if ( not_empty valveEnd )
- if ( not valveEnd.seen )
-  tankName = valveEnd.FindTank();
-  if ( tankName != "" )
-    if ( tankName == param.Destination )
-      success = true;
-      valveEnd.AddValve();
+  if ( not valveEnd.seen )
+    tankName = valveEnd.FindTank();
+    if ( tankName != "" )  // found a connected tank
+      if ( tankName == param.Destination )
+        success = true;
+        valveEnd.AddValve();
+      end if;
+    else
+      // no tank - look for pipeEnd the other side of the valve
     end if;
-   end if;
-  else
-    // look for pipeEnd the other side of the valve
+    valveEnd.seen = true;
   end if;
 end if;
 
 if ( not success )
-
   select many pipeEnds related by self->PipeEnd[R4.''connects to''];
+//  select many pipeEnds related by self->PipeEnd[R4.''connects to'']
+//   where ( not selected.seen );
   for each pipeEnd in pipeEnds
     if ( not pipeEnd.seen )
-      success = pipeEnd.FindPath( Start:param.Start, Destination:param.Destination );
+      success = pipeEnd.FindPath( Destination:param.Destination );
       if ( success )
         break;
       end if;
     end if;
-    LOG::LogInfo( message:"here" );
   end for;
-  LOG::LogInfo( message:"exited first loop" );
   if ( not success )
-    select many pipeEnds related by self->PipeEnd[R4.''attaches to''];
-    for each pipeEnd in pipeEnds
-      if ( not pipeEnd.seen )
-        success = pipeEnd.FindPath( Start:param.Start, Destination:param.Destination );
-        if ( success )
-          break;
-        end if;
+    select many apipeEnds related by self->PipeEnd[R4.''attaches to'']
+     where ( not selected.seen );
+    for each apipeEnd in apipeEnds
+      success = apipeEnd.FindPath( Destination:param.Destination );
+      if ( success )
+        break;
       end if;
     end for;
   end if;
-
 end if;
 return success;',
 	1,
@@ -69,15 +67,6 @@ INSERT INTO O_TPARM
 	VALUES ("80d13025-8ec2-4b02-aa81-198c30f2624b",
 	"aea1f329-6388-4f3d-9c60-d758f6fda4c3",
 	'Destination',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"75fe9d7e-9435-4b1f-a70c-e7f1f878f9cc",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("75fe9d7e-9435-4b1f-a70c-e7f1f878f9cc",
-	"aea1f329-6388-4f3d-9c60-d758f6fda4c3",
-	'Start',
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',

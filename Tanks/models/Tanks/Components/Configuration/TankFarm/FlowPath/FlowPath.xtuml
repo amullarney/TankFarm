@@ -34,7 +34,7 @@ end for;
 success = false;
 select many valveEnds related by start->ValveEnd[R3.''is accessed through''];
 for each valveEnd in valveEnds 
-  success = valveEnd.FindPath( Start:param.From, Destination:param.To );
+  success = valveEnd.FindPath( Destination:param.To );
   if ( success )
   	break;
   end if; 

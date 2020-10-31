@@ -21,7 +21,7 @@ if ( empty valveEnd )
 end if;
 valveEnd.seen = true;
 select one pipeEnd related by valveEnd->PipeEnd[R2.''is attached to''];
-success = pipeEnd.FindPath( Start:param.Start, Destination:param.Destination );
+success = pipeEnd.FindPath( Destination:param.Destination );
 
 if ( success )
   self.AddValve();
@@ -35,15 +35,6 @@ INSERT INTO O_TPARM
 	VALUES ("4e2b5619-bc71-41ca-8cbf-609f88dad3b5",
 	"14f6b645-2f9d-4da0-b859-75e0a7014cf1",
 	'Destination',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"8773689c-483b-4064-8e15-e8a5fc6ec199",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("8773689c-483b-4064-8e15-e8a5fc6ec199",
-	"14f6b645-2f9d-4da0-b859-75e0a7014cf1",
-	'Start',
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
@@ -74,17 +65,17 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000004",
 	1,
-	'
-  select one valveEnd related by self->ValveEnd[R1.''is one side of''];
-  if ( empty valveEnd )
-    select one valveEnd related by self->ValveEnd[R1.''is other side of''];
-  end if;
-  select one tank related by valveEnd->Tank[R3.''acesses''];
-  if ( not_empty tank )
-    return tank.TankIdentifier;
-  else
-    return "";
-  end if;',
+	'// Find the other side of this valve - do not know which way to traverse R1
+select one valveEnd related by self->ValveEnd[R1.''is one side of''];
+if ( empty valveEnd )
+  select one valveEnd related by self->ValveEnd[R1.''is other side of''];
+end if;
+select one tank related by valveEnd->Tank[R3.''acesses''];
+if ( not_empty tank )
+  return tank.TankIdentifier;
+else
+  return "";
+end if;',
 	1,
 	'',
 	"2967108e-ad84-4af8-b368-3a9845eac0d5",
