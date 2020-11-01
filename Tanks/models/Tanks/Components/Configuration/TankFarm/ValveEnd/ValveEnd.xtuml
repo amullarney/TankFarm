@@ -5,45 +5,14 @@ INSERT INTO O_OBJ
 	'ValveEnd',
 	5,
 	'ValveEnd',
-	'',
+	'Each valve has two ''ends''; each end connects either to a tank or to a pipe end.
+Valves are non-directional: the ends cannot be considered to be inlet or outlet.
+Flow paths can be developed in any direction.',
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO O_TFR
-	VALUES ("14f6b645-2f9d-4da0-b859-75e0a7014cf1",
-	"1d5ab4c5-7383-4769-aedb-d550e0681969",
-	'FindPath',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000001",
-	1,
-	'success = false;
-select one valveEnd related by self->ValveEnd[R1.''is one side of''];
-if ( empty valveEnd )
-  select one valveEnd related by self->ValveEnd[R1.''is other side of''];
-end if;
-valveEnd.seen = true;
-select one pipeEnd related by valveEnd->PipeEnd[R2.''is attached to''];
-success = pipeEnd.FindPath( Destination:param.Destination );
-
-if ( success )
-  self.AddValve();
-end if;
-return success;',
-	1,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	0);
-INSERT INTO O_TPARM
-	VALUES ("4e2b5619-bc71-41ca-8cbf-609f88dad3b5",
-	"14f6b645-2f9d-4da0-b859-75e0a7014cf1",
-	'Destination',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
 INSERT INTO O_TFR
 	VALUES ("2967108e-ad84-4af8-b368-3a9845eac0d5",
 	"1d5ab4c5-7383-4769-aedb-d550e0681969",
-	'AddValve',
+	'AddValveToPath',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
@@ -56,30 +25,51 @@ INSERT INTO O_TFR
 ',
 	1,
 	'',
-	"14f6b645-2f9d-4da0-b859-75e0a7014cf1",
+	"00000000-0000-0000-0000-000000000000",
 	0);
 INSERT INTO O_TFR
 	VALUES ("5880c536-b954-45c4-947c-61789e0bd08d",
 	"1d5ab4c5-7383-4769-aedb-d550e0681969",
 	'FindTank',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000004",
+	'Seek a path connecting to the named destination tank.',
+	"ba5eda7a-def5-0000-0000-000000000001",
 	1,
 	'// Find the other side of this valve - do not know which way to traverse R1
+success = false;
+self.seen = true;
 select one valveEnd related by self->ValveEnd[R1.''is one side of''];
 if ( empty valveEnd )
   select one valveEnd related by self->ValveEnd[R1.''is other side of''];
 end if;
-select one tank related by valveEnd->Tank[R3.''acesses''];
+valveEnd.seen = true;
+select one tank related by valveEnd->Tank[R3.''acesses''];  // connected to a tank?
 if ( not_empty tank )
-  return tank.TankIdentifier;
+  if ( tank.TankIdentifier == param.Destination )
+    success = true;
+  end if;
 else
-  return "";
-end if;',
+  select one pipeEnd related by valveEnd->PipeEnd[R2.''is attached to''];  // maybe a pipe?
+  if ( not_empty pipeEnd )
+    success = pipeEnd.FindPath( Destination:param.Destination );
+  end if;
+end if;
+if ( success )
+  self.AddValveToPath();
+end if;
+return success;',
 	1,
 	'',
 	"2967108e-ad84-4af8-b368-3a9845eac0d5",
 	0);
+INSERT INTO O_TPARM
+	VALUES ("54ef0628-54ac-4ee8-bca3-48fc8dbd4eb8",
+	"5880c536-b954-45c4-947c-61789e0bd08d",
+	'Destination',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
 	"1d5ab4c5-7383-4769-aedb-d550e0681969");
@@ -109,7 +99,7 @@ INSERT INTO O_ATTR
 	"1d5ab4c5-7383-4769-aedb-d550e0681969",
 	"a9369eb0-1010-4bd8-a60c-7ddc97683dad",
 	'seen',
-	'',
+	'If true, this valve end has been visited in the search; do not proceed to explore it again.',
 	'',
 	'seen',
 	0,
@@ -136,6 +126,6 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
 	'TankFarm',
-	'',
+	'A group of classes which represent the interconnection of tanks through a network of valves and pipes.',
 	0,
 	'../TankFarm.xtuml');

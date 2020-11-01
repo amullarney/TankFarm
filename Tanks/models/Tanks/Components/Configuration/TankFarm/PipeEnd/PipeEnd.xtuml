@@ -5,7 +5,7 @@ INSERT INTO O_OBJ
 	'PipeEnd',
 	7,
 	'PipeEnd',
-	'',
+	'A pipe end represents a node in a pipe network. It can connect to other pipe ends - and, optionally, one valve.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
 	VALUES ("aea1f329-6388-4f3d-9c60-d758f6fda4c3",
@@ -17,28 +17,14 @@ INSERT INTO O_TFR
 	'success = false;
 tankName = "";
 self.seen = true;
-//select one valveEnd related by self->ValveEnd[R2.''attaches to'']
-// where ( not selected.seen );
 select one valveEnd related by self->ValveEnd[R2.''attaches to''];
 if ( not_empty valveEnd )
   if ( not valveEnd.seen )
-    tankName = valveEnd.FindTank();
-    if ( tankName != "" )  // found a connected tank
-      if ( tankName == param.Destination )
-        success = true;
-        valveEnd.AddValve();
-      end if;
-    else
-      // no tank - look for pipeEnd the other side of the valve
-    end if;
-    valveEnd.seen = true;
+    success = valveEnd.FindTank( Destination:param.Destination );
   end if;
 end if;
-
 if ( not success )
   select many pipeEnds related by self->PipeEnd[R4.''connects to''];
-//  select many pipeEnds related by self->PipeEnd[R4.''connects to'']
-//   where ( not selected.seen );
   for each pipeEnd in pipeEnds
     if ( not pipeEnd.seen )
       success = pipeEnd.FindPath( Destination:param.Destination );
@@ -48,12 +34,13 @@ if ( not success )
     end if;
   end for;
   if ( not success )
-    select many apipeEnds related by self->PipeEnd[R4.''attaches to'']
-     where ( not selected.seen );
+    select many apipeEnds related by self->PipeEnd[R4.''attaches to''];
     for each apipeEnd in apipeEnds
-      success = apipeEnd.FindPath( Destination:param.Destination );
-      if ( success )
-        break;
+      if ( not apipeEnd.seen )
+        success = apipeEnd.FindPath( Destination:param.Destination );
+        if ( success )
+          break;
+        end if;
       end if;
     end for;
   end if;
@@ -83,7 +70,7 @@ INSERT INTO O_ATTR
 	"17b18e31-1e24-4787-a808-0e757e4fa330",
 	"00000000-0000-0000-0000-000000000000",
 	'seen',
-	'',
+	'If true, this pipe end has been visited in the search; do not proceed to explore it again.',
 	'',
 	'seen',
 	0,
@@ -110,6 +97,6 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
 	'TankFarm',
-	'',
+	'A group of classes which represent the interconnection of tanks through a network of valves and pipes.',
 	0,
 	'../TankFarm.xtuml');

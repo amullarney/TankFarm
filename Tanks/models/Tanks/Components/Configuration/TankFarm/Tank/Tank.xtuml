@@ -5,7 +5,7 @@ INSERT INTO O_OBJ
 	'Tank',
 	1,
 	'Tank',
-	'',
+	'A tank represents an end node in a network which represents connectivity across valves and pipes.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
 	VALUES ("90c5b319-0aa7-4066-b57a-b4321709e351",
@@ -45,6 +45,6 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
 	'TankFarm',
-	'',
+	'A group of classes which represent the interconnection of tanks through a network of valves and pipes.',
 	0,
 	'../TankFarm.xtuml');

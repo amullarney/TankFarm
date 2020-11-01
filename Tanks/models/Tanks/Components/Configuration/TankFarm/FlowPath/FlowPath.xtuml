@@ -5,7 +5,7 @@ INSERT INTO O_OBJ
 	'FlowPath',
 	8,
 	'FlowPath',
-	'',
+	'An instance exists while searching for the solution to a test which wants to connect two tanks.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
 	VALUES ("7aac55bd-e1d7-40f3-aade-8f347e2225a7",
@@ -34,7 +34,7 @@ end for;
 success = false;
 select many valveEnds related by start->ValveEnd[R3.''is accessed through''];
 for each valveEnd in valveEnds 
-  success = valveEnd.FindPath( Destination:param.To );
+  success = valveEnd.FindTank( Destination:param.To );
   if ( success )
   	break;
   end if; 

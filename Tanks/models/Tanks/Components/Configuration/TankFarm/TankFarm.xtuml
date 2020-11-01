@@ -5,7 +5,7 @@ INSERT INTO EP_PKG
 	"00000000-0000-0000-0000-000000000000",
 	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
 	'TankFarm',
-	'',
+	'A group of classes which represent the interconnection of tanks through a network of valves and pipes.',
 	0);
 INSERT INTO GD_MD
 	VALUES ("c0131212-9e9e-451d-af90-a422cf95335d",
@@ -1314,7 +1314,9 @@ INSERT INTO O_OBJ_PROXY
 	'ValveEnd',
 	5,
 	'ValveEnd',
-	'',
+	'Each valve has two ''ends''; each end connects either to a tank or to a pipe end.
+Valves are non-directional: the ends cannot be considered to be inlet or outlet.
+Flow paths can be developed in any direction.',
 	"00000000-0000-0000-0000-000000000000",
 	'./ValveEnd/ValveEnd.xtuml');
 INSERT INTO R_AOTH
@@ -1353,7 +1355,8 @@ INSERT INTO O_OBJ_PROXY
 	'Valve',
 	2,
 	'Valve',
-	'',
+	'A valve controls flow through it. It may be either open or closed.
+Each ''end'' of a valve connects either to a tank or a pipe end.',
 	"00000000-0000-0000-0000-000000000000",
 	'./Valve/Valve.xtuml');
 INSERT INTO PE_PE
@@ -1391,7 +1394,7 @@ INSERT INTO O_OBJ_PROXY
 	'PipeEnd',
 	7,
 	'PipeEnd',
-	'',
+	'A pipe end represents a node in a pipe network. It can connect to other pipe ends - and, optionally, one valve.',
 	"00000000-0000-0000-0000-000000000000",
 	'./PipeEnd/PipeEnd.xtuml');
 INSERT INTO R_PART
@@ -1579,7 +1582,7 @@ INSERT INTO O_OBJ_PROXY
 	'FlowPath',
 	8,
 	'FlowPath',
-	'',
+	'An instance exists while searching for the solution to a test which wants to connect two tanks.',
 	"00000000-0000-0000-0000-000000000000",
 	'./FlowPath/FlowPath.xtuml');
 INSERT INTO PE_PE
@@ -1640,7 +1643,8 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'CreateConfiguration',
 	'',
-	'create object instance tank of Tank;
+	'// Create tanks with their isolation valves.
+create object instance tank of Tank;
 tank.TankIdentifier = "Tank1";
 create object instance valve1 of Valve;
 valve1.Name = "Valve1"; 
@@ -1716,10 +1720,26 @@ relate valve5A to tank across R3.''acesses'';
 create object instance pipeEnd5 of PipeEnd;
 relate valve5B to pipeEnd5 across R2.''is attached to'';
 
-// Allow connections between tanks 1,3,4,5
+// Introduce a pipeline valve
+create object instance valveX of Valve;
+valveX.Name = "ValveX"; 
+create object instance valveXA of ValveEnd;
+valveXA.Name = "valveXA";
+create object instance valveXB of ValveEnd;
+valveXB.Name = "valveXB";
+relate valveXA to valveXB across R1.''is one side of'' using valveX;
+create object instance pipeEndXA of PipeEnd;
+relate valveXA to pipeEndXA across R2.''is attached to'';
+create object instance pipeEndXB of PipeEnd;
+relate valveXB to pipeEndXB across R2.''is attached to'';
+
+// Allow connections between tanks 1,3,4
 relate pipeEnd3 to pipeEnd1 across R4.''attaches to'';
 relate pipeEnd4_1 to pipeEnd1 across R4.''attaches to'';
-relate pipeEnd5 to pipeEnd1 across R4.''attaches to'';
+
+// Allow tank1 to reach tank 5 through valveX
+relate pipeEnd5 to pipeEndXA across R4.''attaches to'';
+relate pipeEndXB to pipeEnd1 across R4.''attaches to'';
 
 // Allow connections between tanks 2,4,5
 relate pipeEnd4_2 to pipeEnd2 across R4.''attaches to'';
@@ -1779,6 +1799,22 @@ INSERT INTO S_SYNC
 	0);
 INSERT INTO PE_PE
 	VALUES ("6cae5e84-b8f2-42ed-951b-a717b92833f4",
+	1,
+	"50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("6d4b6483-ceb4-4b96-a14a-52593c749764",
+	"00000000-0000-0000-0000-000000000000",
+	'Test15',
+	'',
+	'FlowPath::FindPath( From:"Tank1", To:"Tank5" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("6d4b6483-ceb4-4b96-a14a-52593c749764",
 	1,
 	"50aa1acf-689e-418a-8986-88774b86794f",
 	"00000000-0000-0000-0000-000000000000",

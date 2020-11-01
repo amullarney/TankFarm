@@ -5,7 +5,8 @@ INSERT INTO O_OBJ
 	'Valve',
 	2,
 	'Valve',
-	'',
+	'A valve controls flow through it. It may be either open or closed.
+Each ''end'' of a valve connects either to a tank or a pipe end.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
 	VALUES ("373d76cd-98ba-4605-8a60-2ecb53ddf604",
