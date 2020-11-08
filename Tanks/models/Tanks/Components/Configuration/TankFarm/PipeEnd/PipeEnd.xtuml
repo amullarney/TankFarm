@@ -15,12 +15,11 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000001",
 	1,
 	'success = false;
-tankName = "";
-self.seen = true;
-select one valveEnd related by self->ValveEnd[R2.''attaches to''];
-if ( not_empty valveEnd )
-  if ( not valveEnd.seen )
-    success = valveEnd.FindTank( Destination:param.Destination );
+self.seen = true;  // to avoid re-visiting this node.
+select one valve related by self->Valve[R2.''attaches to''];
+if ( not_empty valve )
+  if ( not valve.seen )
+    success = valve.FindTank( Destination:param.Destination );
   end if;
 end if;
 if ( not success )

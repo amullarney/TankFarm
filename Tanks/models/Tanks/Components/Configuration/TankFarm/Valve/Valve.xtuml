@@ -1,41 +1,78 @@
 -- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO O_OBJ
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
 	'Valve',
-	2,
+	5,
 	'Valve',
-	'A valve controls flow through it. It may be either open or closed.
-Each ''end'' of a valve connects either to a tank or a pipe end.',
+	'Each valve has two ''ends''; each end connects either to a tank or to a pipe end.
+Valves are non-directional: the ends cannot be considered to be inlet or outlet.
+Flow paths can be developed in any direction.',
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO O_NBATTR
-	VALUES ("373d76cd-98ba-4605-8a60-2ecb53ddf604",
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c");
-INSERT INTO O_BATTR
-	VALUES ("373d76cd-98ba-4605-8a60-2ecb53ddf604",
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c");
-INSERT INTO O_ATTR
-	VALUES ("373d76cd-98ba-4605-8a60-2ecb53ddf604",
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c",
+INSERT INTO O_TFR
+	VALUES ("2967108e-ad84-4af8-b368-3a9845eac0d5",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	'AddValveToPath',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'select any path from instances of FlowPath; 
+relate self to path across R6.''is in a connected'';',
+	1,
+	'',
 	"00000000-0000-0000-0000-000000000000",
-	'Open',
-	'',
-	'',
-	'Open',
-	0,
+	0);
+INSERT INTO O_TFR
+	VALUES ("5880c536-b954-45c4-947c-61789e0bd08d",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	'FindTank',
+	'Seek a path connecting to the named destination tank.',
 	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'success = false;
+self.seen = true;
+select one tank related by self->Tank[R1.''acesses''];  // connected to a tank?
+if ( not_empty tank )
+  if ( tank.Name == param.Destination )  // found the right one.
+    success = true;
+  end if;
+end if;
+if ( not success )
+  select many pipeEnds related by self->PipeEnd[R2.''is attached to''];
+//   where ( not selected.seen );
+  for each pipeEnd in pipeEnds
+  if ( not pipeEnd.seen )
+    success = pipeEnd.FindPath( Destination:param.Destination );
+  end if;
+  end for;
+end if;
+if ( success )
+  self.AddValveToPath();
+end if;
+return success;',
+	1,
 	'',
+	"2967108e-ad84-4af8-b368-3a9845eac0d5",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("54ef0628-54ac-4ee8-bca3-48fc8dbd4eb8",
+	"5880c536-b954-45c4-947c-61789e0bd08d",
+	'Destination',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("f0555487-c4ee-4ab0-9394-d18921544114",
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c");
+	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
 INSERT INTO O_BATTR
-	VALUES ("f0555487-c4ee-4ab0-9394-d18921544114",
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c");
+	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
 INSERT INTO O_ATTR
-	VALUES ("f0555487-c4ee-4ab0-9394-d18921544114",
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	"373d76cd-98ba-4605-8a60-2ecb53ddf604",
+	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"00000000-0000-0000-0000-000000000000",
 	'Name',
 	'',
 	'',
@@ -44,17 +81,58 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("95b02bde-863c-463d-a13f-9be8268eef12",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_BATTR
+	VALUES ("95b02bde-863c-463d-a13f-9be8268eef12",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_ATTR
+	VALUES ("95b02bde-863c-463d-a13f-9be8268eef12",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	'seen',
+	'If true, this valve end has been visited in the search; do not proceed to explore it again.',
+	'',
+	'seen',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("45331176-4379-4ddc-bfc3-cb20b01bd40c",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_BATTR
+	VALUES ("45331176-4379-4ddc-bfc3-cb20b01bd40c",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_ATTR
+	VALUES ("45331176-4379-4ddc-bfc3-cb20b01bd40c",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"95b02bde-863c-463d-a13f-9be8268eef12",
+	'Open',
+	'',
+	'',
+	'Open',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c");
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
+INSERT INTO O_OIDA
+	VALUES ("a9369eb0-1010-4bd8-a60c-7ddc97683dad",
+	"1d5ab4c5-7383-4769-aedb-d550e0681969",
+	0,
+	'Name');
 INSERT INTO O_ID
 	VALUES (1,
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c");
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
 INSERT INTO O_ID
 	VALUES (2,
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c");
+	"1d5ab4c5-7383-4769-aedb-d550e0681969");
 INSERT INTO PE_PE
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
 	1,
 	"50aa1acf-689e-418a-8986-88774b86794f",
 	"00000000-0000-0000-0000-000000000000",
@@ -64,6 +142,6 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
 	'TankFarm',
-	'',
+	'A group of classes which represent the interconnection of tanks through a network of valves and pipes.',
 	0,
 	'../TankFarm.xtuml');

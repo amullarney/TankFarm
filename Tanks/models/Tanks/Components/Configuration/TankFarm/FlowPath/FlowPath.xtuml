@@ -16,9 +16,9 @@ INSERT INTO O_TFR
 	0,
 	'create object instance path of FlowPath;
 select any start from instances of Tank
- where ( selected.TankIdentifier == param.From );
+ where ( selected.Name == param.From );
 select any finish from instances of Tank
- where ( selected.TankIdentifier == param.To );
+ where ( selected.Name == param.To );
 relate start to finish across R5.''starts from'' using path;
 
 select many pipeEnds from instances of PipeEnd;
@@ -26,15 +26,15 @@ for each pipeEnd in pipeEnds
   pipeEnd.seen = false;
 end for;
                                 
-select many valveEnds from instances of ValveEnd;
-for each valveEnd in valveEnds
-  valveEnd.seen = false;
+select many valves from instances of Valve;
+for each valve in valves
+  valve.seen = false;
 end for;
 
 success = false;
-select many valveEnds related by start->ValveEnd[R3.''is accessed through''];
-for each valveEnd in valveEnds 
-  success = valveEnd.FindTank( Destination:param.To );
+select many valves related by start->Valve[R1.''is accessed through''];
+for each valve in valves 
+  success = valve.FindTank( Destination:param.To );
   if ( success )
   	break;
   end if; 
@@ -47,7 +47,7 @@ if ( success )
   for each valve in valves
   	LOG::LogInfo( message:valve.Name );
   	valve.Open = true;
-    unrelate valve from path across R6.''is in a connected'';
+    unrelate valve from path across R6.''is in a connected''; 
   end for;
 else
   LOG::LogFailure( message:"No path found from " + param.From + " to " + param.To );
@@ -97,6 +97,6 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"8702744f-9c2b-4186-8857-7a6ee2c6bafc",
 	'TankFarm',
-	'',
+	'A group of classes which represent the interconnection of tanks through a network of valves and pipes.',
 	0,
 	'../TankFarm.xtuml');

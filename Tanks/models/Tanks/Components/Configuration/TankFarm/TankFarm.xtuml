@@ -39,7 +39,7 @@ INSERT INTO GD_NCS
 	VALUES ("0247db18-7593-486f-9b9d-a957158b5330");
 INSERT INTO DIM_ND
 	VALUES (200.000000,
-	107.000000,
+	96.000000,
 	"0247db18-7593-486f-9b9d-a957158b5330");
 INSERT INTO DIM_GE
 	VALUES (4980.000000,
@@ -53,12 +53,12 @@ INSERT INTO DIM_ELE
 INSERT INTO DIM_CON
 	VALUES ("c1a7e3ef-549a-4de7-a1fd-f77abc33dc4c",
 	5148.000000,
-	2964.000000,
+	2953.000000,
 	"0247db18-7593-486f-9b9d-a957158b5330");
 INSERT INTO DIM_CON
 	VALUES ("03e8b6c9-7463-4b88-8c74-ffb2eae6a7f5",
 	5040.000000,
-	2964.000000,
+	2953.000000,
 	"0247db18-7593-486f-9b9d-a957158b5330");
 INSERT INTO DIM_CON
 	VALUES ("078d71b7-bb3a-4bce-b7da-e852e19d892d",
@@ -66,71 +66,12 @@ INSERT INTO DIM_CON
 	2891.000000,
 	"0247db18-7593-486f-9b9d-a957158b5330");
 INSERT INTO GD_GE
-	VALUES ("73904492-0615-46c7-a117-525a58a30189",
-	"c0131212-9e9e-451d-af90-a422cf95335d",
-	"f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	21,
-	0,
-	'Tanks::Components::Configuration::TankFarm::Valve');
-INSERT INTO GD_SHP
-	VALUES ("73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO GD_NCS
-	VALUES ("73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	108.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_GE
-	VALUES (4980.000000,
-	3276.000000,
-	"73904492-0615-46c7-a117-525a58a30189",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("73904492-0615-46c7-a117-525a58a30189",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_CON
-	VALUES ("1ad89178-1cb4-4b87-aa25-efe160532b26",
-	5028.000000,
-	3276.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_CON
-	VALUES ("6711babe-c8ca-43bd-98b9-6f9c0e5993b3",
-	4980.000000,
-	3348.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_CON
-	VALUES ("aa456ab2-f432-4cfd-ac5f-5a7ad6d09537",
-	5027.000000,
-	3276.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_CON
-	VALUES ("c555bd74-8e8c-4777-b1b4-95ae158ab841",
-	5015.000000,
-	3276.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_CON
-	VALUES ("f216f390-a0b3-45bc-8088-ea258dae1179",
-	5027.000000,
-	3276.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_CON
-	VALUES ("ae2c3ae1-2397-4043-be52-b2b84ed8f6c2",
-	5039.000000,
-	3276.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO DIM_CON
-	VALUES ("cc5f420e-4fcb-452b-88d0-c6b00a24956f",
-	5027.000000,
-	3276.000000,
-	"73904492-0615-46c7-a117-525a58a30189");
-INSERT INTO GD_GE
 	VALUES ("0857a503-cb04-4e07-a422-431947741093",
 	"c0131212-9e9e-451d-af90-a422cf95335d",
 	"1d5ab4c5-7383-4769-aedb-d550e0681969",
 	21,
 	0,
-	'Tanks::Components::Configuration::TankFarm::ValveEnd');
+	'Tanks::Components::Configuration::TankFarm::Valve');
 INSERT INTO GD_SHP
 	VALUES ("0857a503-cb04-4e07-a422-431947741093");
 INSERT INTO GD_NCS
@@ -155,7 +96,7 @@ INSERT INTO DIM_CON
 	"0857a503-cb04-4e07-a422-431947741093");
 INSERT INTO DIM_CON
 	VALUES ("0360f0cd-0b4e-493f-b773-51cad87e377c",
-	5100.000000,
+	5087.000000,
 	3180.000000,
 	"0857a503-cb04-4e07-a422-431947741093");
 INSERT INTO DIM_CON
@@ -173,6 +114,11 @@ INSERT INTO DIM_CON
 	5180.000000,
 	3131.000000,
 	"0857a503-cb04-4e07-a422-431947741093");
+INSERT INTO DIM_CON
+	VALUES ("9822b08b-9fbd-433b-81af-6c49e104e544",
+	4980.000000,
+	3114.000000,
+	"0857a503-cb04-4e07-a422-431947741093");
 INSERT INTO GD_GE
 	VALUES ("2041358f-9581-4c57-a70e-e110afdf47c1",
 	"c0131212-9e9e-451d-af90-a422cf95335d",
@@ -189,7 +135,7 @@ INSERT INTO DIM_ND
 	108.000000,
 	"2041358f-9581-4c57-a70e-e110afdf47c1");
 INSERT INTO DIM_GE
-	VALUES (5388.000000,
+	VALUES (5340.000000,
 	3072.000000,
 	"2041358f-9581-4c57-a70e-e110afdf47c1",
 	"00000000-0000-0000-0000-000000000000");
@@ -199,219 +145,19 @@ INSERT INTO DIM_ELE
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_CON
 	VALUES ("abd15d98-aa07-4054-aeec-d25bed8a19e2",
-	5588.000000,
+	5540.000000,
 	3144.000000,
 	"2041358f-9581-4c57-a70e-e110afdf47c1");
 INSERT INTO DIM_CON
 	VALUES ("5ce3fe8d-1ecd-4364-b6c5-9182df347a1d",
-	5484.000000,
+	5436.000000,
 	3072.000000,
 	"2041358f-9581-4c57-a70e-e110afdf47c1");
 INSERT INTO DIM_CON
 	VALUES ("b737b376-67bb-4832-b47c-0df927e2a453",
-	5388.000000,
-	3131.000000,
+	5340.000000,
+	3132.000000,
 	"2041358f-9581-4c57-a70e-e110afdf47c1");
-INSERT INTO GD_GE
-	VALUES ("2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"c0131212-9e9e-451d-af90-a422cf95335d",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	24,
-	0,
-	'Tanks::Components::Configuration::TankFarm::R1');
-INSERT INTO GD_CON
-	VALUES ("2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_CTXT
-	VALUES ("1c2477d4-a3d7-4495-99fb-c3e06a4e1550",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	0,
-	0.000000,
-	0.000000);
-INSERT INTO DIM_ND
-	VALUES (61.000000,
-	40.000000,
-	"1c2477d4-a3d7-4495-99fb-c3e06a4e1550");
-INSERT INTO DIM_GE
-	VALUES (5110.000000,
-	3189.000000,
-	"1c2477d4-a3d7-4495-99fb-c3e06a4e1550",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("1c2477d4-a3d7-4495-99fb-c3e06a4e1550",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_CTXT
-	VALUES ("ad3c14d4-67f5-48e1-b892-2b7401434d05",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	2,
-	0.000000,
-	0.000000);
-INSERT INTO DIM_ND
-	VALUES (0.000000,
-	0.000000,
-	"ad3c14d4-67f5-48e1-b892-2b7401434d05");
-INSERT INTO DIM_GE
-	VALUES (4906.000000,
-	3197.000000,
-	"ad3c14d4-67f5-48e1-b892-2b7401434d05",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("ad3c14d4-67f5-48e1-b892-2b7401434d05",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_CTXT
-	VALUES ("81647b06-f7f5-4117-a9df-a5af996d1ceb",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	1,
-	0.000000,
-	0.000000);
-INSERT INTO DIM_ND
-	VALUES (61.000000,
-	40.000000,
-	"81647b06-f7f5-4117-a9df-a5af996d1ceb");
-INSERT INTO DIM_GE
-	VALUES (4904.000000,
-	3137.000000,
-	"81647b06-f7f5-4117-a9df-a5af996d1ceb",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("81647b06-f7f5-4117-a9df-a5af996d1ceb",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_LS
-	VALUES ("abdbbd1b-90b1-4bfb-90ef-a36dd7ee0c98",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000",
-	"66c1b023-2203-442a-885f-1c1357e861b4",
-	"b1b41fc7-49d1-4b8b-8b0e-9ddd60387f35");
-INSERT INTO GD_LS
-	VALUES ("6af486c2-b9ec-4d72-8e7a-676c7586e695",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"abdbbd1b-90b1-4bfb-90ef-a36dd7ee0c98",
-	"b1b41fc7-49d1-4b8b-8b0e-9ddd60387f35",
-	"0670ea46-c2fc-4ee8-b4a4-ac5d28662b44");
-INSERT INTO GD_AOS
-	VALUES ("12fb105b-50aa-41e0-817e-e33b83c75769",
-	"6af486c2-b9ec-4d72-8e7a-676c7586e695");
-INSERT INTO GD_AOS
-	VALUES ("9a7dcb0b-cce6-4ada-ad8b-054bc02baec6",
-	"6af486c2-b9ec-4d72-8e7a-676c7586e695");
-INSERT INTO GD_AOS
-	VALUES ("c1f7f761-ad12-4c96-9fa3-e038a6d5c50d",
-	"6af486c2-b9ec-4d72-8e7a-676c7586e695");
-INSERT INTO GD_AOS
-	VALUES ("8c2b3edd-5d65-46a8-a1a9-7568147fb422",
-	"6af486c2-b9ec-4d72-8e7a-676c7586e695");
-INSERT INTO GD_AOS
-	VALUES ("148e7401-1b01-495e-91db-c90bce0f6313",
-	"6af486c2-b9ec-4d72-8e7a-676c7586e695");
-INSERT INTO GD_AOS
-	VALUES ("4ce8ab6a-83c7-4b6c-bc5f-f1620224c131",
-	"6af486c2-b9ec-4d72-8e7a-676c7586e695");
-INSERT INTO GD_LS
-	VALUES ("37abea12-baf6-45b6-9f0e-94190423f71c",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"6af486c2-b9ec-4d72-8e7a-676c7586e695",
-	"0670ea46-c2fc-4ee8-b4a4-ac5d28662b44",
-	"211ac012-fb1a-4f9b-a9e6-a32754dceb7d");
-INSERT INTO GD_LS
-	VALUES ("7bb84085-61be-457a-83e7-a39155d0c194",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"f342913c-45f4-4000-8bfa-96d8c2257172",
-	"5b6767f1-bc96-410e-9640-f95f9be41804",
-	"b2f21e7b-0b42-4e3d-aaa5-57e86f47c725");
-INSERT INTO GD_LS
-	VALUES ("f342913c-45f4-4000-8bfa-96d8c2257172",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"37abea12-baf6-45b6-9f0e-94190423f71c",
-	"211ac012-fb1a-4f9b-a9e6-a32754dceb7d",
-	"5b6767f1-bc96-410e-9640-f95f9be41804");
-INSERT INTO DIM_WAY
-	VALUES ("66c1b023-2203-442a-885f-1c1357e861b4",
-	5100.000000,
-	3180.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_WAY
-	VALUES ("b2f21e7b-0b42-4e3d-aaa5-57e86f47c725",
-	4980.000000,
-	3131.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000",
-	"66c1b023-2203-442a-885f-1c1357e861b4");
-INSERT INTO DIM_WAY
-	VALUES ("b1b41fc7-49d1-4b8b-8b0e-9ddd60387f35",
-	5100.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_WAY
-	VALUES ("0670ea46-c2fc-4ee8-b4a4-ac5d28662b44",
-	4895.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_WAY
-	VALUES ("5b6767f1-bc96-410e-9640-f95f9be41804",
-	4895.000000,
-	3131.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_WAY
-	VALUES ("211ac012-fb1a-4f9b-a9e6-a32754dceb7d",
-	4895.000000,
-	3179.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("2f6f91a1-2021-4eed-bf95-d5f57f611a81",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_CON
-	VALUES ("12fb105b-50aa-41e0-817e-e33b83c75769",
-	5027.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81");
-INSERT INTO DIM_CON
-	VALUES ("9a7dcb0b-cce6-4ada-ad8b-054bc02baec6",
-	5027.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81");
-INSERT INTO DIM_CON
-	VALUES ("c1f7f761-ad12-4c96-9fa3-e038a6d5c50d",
-	5015.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81");
-INSERT INTO DIM_CON
-	VALUES ("8c2b3edd-5d65-46a8-a1a9-7568147fb422",
-	5027.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81");
-INSERT INTO DIM_CON
-	VALUES ("148e7401-1b01-495e-91db-c90bce0f6313",
-	5039.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81");
-INSERT INTO DIM_CON
-	VALUES ("4ce8ab6a-83c7-4b6c-bc5f-f1620224c131",
-	5027.000000,
-	3227.000000,
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81");
-INSERT INTO DIM_ED
-	VALUES ("0360f0cd-0b4e-493f-b773-51cad87e377c",
-	"a00c3b29-c9eb-431b-a505-e394d532fc00",
-	"2f6f91a1-2021-4eed-bf95-d5f57f611a81");
 INSERT INTO GD_GE
 	VALUES ("af645365-7350-41c1-9ded-25894377e047",
 	"c0131212-9e9e-451d-af90-a422cf95335d",
@@ -433,7 +179,7 @@ INSERT INTO DIM_ND
 	40.000000,
 	"afb40ece-18d4-4dac-93a8-8abb1151ad48");
 INSERT INTO DIM_GE
-	VALUES (5598.000000,
+	VALUES (5550.000000,
 	3153.000000,
 	"afb40ece-18d4-4dac-93a8-8abb1151ad48",
 	"00000000-0000-0000-0000-000000000000");
@@ -452,7 +198,7 @@ INSERT INTO DIM_ND
 	0.000000,
 	"373f5fa2-f936-433f-9927-5a776f4dbdc9");
 INSERT INTO DIM_GE
-	VALUES (5621.000000,
+	VALUES (5573.000000,
 	3027.000000,
 	"373f5fa2-f936-433f-9927-5a776f4dbdc9",
 	"00000000-0000-0000-0000-000000000000");
@@ -471,7 +217,7 @@ INSERT INTO DIM_ND
 	40.000000,
 	"52b27456-4bcb-413f-ba48-a329c1c8075f");
 INSERT INTO DIM_GE
-	VALUES (5494.000000,
+	VALUES (5446.000000,
 	3027.000000,
 	"52b27456-4bcb-413f-ba48-a329c1c8075f",
 	"00000000-0000-0000-0000-000000000000");
@@ -505,35 +251,35 @@ INSERT INTO GD_LS
 	"aa6e0e9e-dddc-4b52-b52d-8f573b40622c");
 INSERT INTO DIM_WAY
 	VALUES ("18fca615-5119-4f6a-8860-6a5c55a6f5b5",
-	5588.000000,
+	5540.000000,
 	3144.000000,
 	"af645365-7350-41c1-9ded-25894377e047",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("aa6e0e9e-dddc-4b52-b52d-8f573b40622c",
-	5484.000000,
+	5436.000000,
 	3072.000000,
 	"af645365-7350-41c1-9ded-25894377e047",
 	"00000000-0000-0000-0000-000000000000",
 	"18fca615-5119-4f6a-8860-6a5c55a6f5b5");
 INSERT INTO DIM_WAY
 	VALUES ("b90c91c3-af15-491f-a081-ad2cce7554c5",
-	5651.000000,
+	5603.000000,
 	3144.000000,
 	"af645365-7350-41c1-9ded-25894377e047",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("512f9fbc-ccc5-4567-a69c-5ba19ba76e20",
-	5651.000000,
+	5603.000000,
 	3023.000000,
 	"af645365-7350-41c1-9ded-25894377e047",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("5e4fdd7b-7762-4faa-97db-b6b5e3213fdc",
-	5483.000000,
+	5435.000000,
 	3023.000000,
 	"af645365-7350-41c1-9ded-25894377e047",
 	"00000000-0000-0000-0000-000000000000",
@@ -557,7 +303,7 @@ INSERT INTO GD_GE
 	"4326db2f-f0c3-416e-8698-8abe0f59445c",
 	24,
 	0,
-	'Tanks::Components::Configuration::TankFarm::R3');
+	'Tanks::Components::Configuration::TankFarm::R1');
 INSERT INTO GD_CON
 	VALUES ("70002a7c-3806-49a6-9e27-300eebf22fc6",
 	"00000000-0000-0000-0000-000000000000");
@@ -573,7 +319,7 @@ INSERT INTO DIM_ND
 	"4d5a3ea6-9411-49c2-b4c3-e170f5a3da70");
 INSERT INTO DIM_GE
 	VALUES (5164.000000,
-	2967.000000,
+	2956.000000,
 	"4d5a3ea6-9411-49c2-b4c3-e170f5a3da70",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -592,7 +338,7 @@ INSERT INTO DIM_ND
 	"fa2d523d-ea02-4def-a573-d341745c1ebb");
 INSERT INTO DIM_GE
 	VALUES (5114.000000,
-	2998.000000,
+	2992.500000,
 	"fa2d523d-ea02-4def-a573-d341745c1ebb",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -627,7 +373,7 @@ INSERT INTO GD_LS
 INSERT INTO DIM_WAY
 	VALUES ("19cb0f42-a1af-4330-a654-f4a5f4b1d073",
 	5148.000000,
-	2964.000000,
+	2953.000000,
 	"70002a7c-3806-49a6-9e27-300eebf22fc6",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
@@ -691,8 +437,8 @@ INSERT INTO DIM_ND
 	0.000000,
 	"ac3c33bb-0de5-4d42-bd22-13848562432c");
 INSERT INTO DIM_GE
-	VALUES (5269.000000,
-	3096.000000,
+	VALUES (5245.000000,
+	3096.500000,
 	"ac3c33bb-0de5-4d42-bd22-13848562432c",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -710,8 +456,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"3d0af2c6-e93b-4a96-855b-b0719a6748f0");
 INSERT INTO DIM_GE
-	VALUES (5312.000000,
-	3138.000000,
+	VALUES (5264.000000,
+	3139.000000,
 	"3d0af2c6-e93b-4a96-855b-b0719a6748f0",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -733,8 +479,8 @@ INSERT INTO DIM_WAY
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("a3386ad2-8097-4d5a-a9f9-a6c1079ccdcd",
-	5388.000000,
-	3131.000000,
+	5340.000000,
+	3132.000000,
 	"5431714b-a238-49d6-83b6-de93d53e4366",
 	"00000000-0000-0000-0000-000000000000",
 	"5aed1b7e-6344-4b0f-8a5d-277b9e213ad9");
@@ -773,7 +519,7 @@ INSERT INTO DIM_ND
 	"aaccc32e-79fd-4d85-aac9-767bfe9b3742");
 INSERT INTO DIM_GE
 	VALUES (5050.000000,
-	2973.000000,
+	2962.000000,
 	"aaccc32e-79fd-4d85-aac9-767bfe9b3742",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -792,7 +538,7 @@ INSERT INTO DIM_ND
 	"3a6d37f8-c019-4c5d-9083-b87a43accc1a");
 INSERT INTO DIM_GE
 	VALUES (4907.000000,
-	2996.000000,
+	2985.000000,
 	"3a6d37f8-c019-4c5d-9083-b87a43accc1a",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -836,6 +582,9 @@ INSERT INTO GD_LS
 	"0eba673c-d399-4d17-90c2-e14af4c5e0b9",
 	"e34c2b62-022b-43d9-b661-152f5b84c74d",
 	"388d293b-ea50-4746-8b41-afea2388df60");
+INSERT INTO GD_AOS
+	VALUES ("0475eaab-9e74-4a98-b0ec-9fe246c31116",
+	"3dd4a74a-524b-4756-89bb-81fcf932a818");
 INSERT INTO GD_LS
 	VALUES ("ba6a2735-2910-41c7-8e95-d8b8c61b50b2",
 	"03ab88eb-6bec-48c4-9af6-e6b3559e580b",
@@ -848,13 +597,10 @@ INSERT INTO GD_LS
 	"3dd4a74a-524b-4756-89bb-81fcf932a818",
 	"388d293b-ea50-4746-8b41-afea2388df60",
 	"292cd242-9415-4a27-94e5-f063fbeceabe");
-INSERT INTO GD_AOS
-	VALUES ("0475eaab-9e74-4a98-b0ec-9fe246c31116",
-	"2a6e453f-dc4e-42b1-baf8-2582cb90c6c4");
 INSERT INTO DIM_WAY
 	VALUES ("077b08d1-052c-4f0a-b16f-2ad9e9fc4696",
 	5040.000000,
-	2964.000000,
+	2953.000000,
 	"03ab88eb-6bec-48c4-9af6-e6b3559e580b",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
@@ -868,14 +614,14 @@ INSERT INTO DIM_WAY
 INSERT INTO DIM_WAY
 	VALUES ("b3d2d6c3-431d-4210-a775-25e0c330b01f",
 	5040.000000,
-	3017.000000,
+	3006.000000,
 	"03ab88eb-6bec-48c4-9af6-e6b3559e580b",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("e34c2b62-022b-43d9-b661-152f5b84c74d",
 	4895.000000,
-	3017.000000,
+	3006.000000,
 	"03ab88eb-6bec-48c4-9af6-e6b3559e580b",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
@@ -889,7 +635,7 @@ INSERT INTO DIM_WAY
 INSERT INTO DIM_WAY
 	VALUES ("388d293b-ea50-4746-8b41-afea2388df60",
 	4895.000000,
-	2975.000000,
+	2964.000000,
 	"03ab88eb-6bec-48c4-9af6-e6b3559e580b",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
@@ -927,7 +673,7 @@ INSERT INTO DIM_ND
 	97.000000,
 	"2012eb59-393a-4794-b96b-60956c1d997a");
 INSERT INTO DIM_GE
-	VALUES (4608.000000,
+	VALUES (4644.000000,
 	2916.000000,
 	"2012eb59-393a-4794-b96b-60956c1d997a",
 	"00000000-0000-0000-0000-000000000000");
@@ -937,12 +683,12 @@ INSERT INTO DIM_ELE
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_CON
 	VALUES ("74919917-90aa-4f6a-9d25-651b63105d41",
-	4808.000000,
+	4844.000000,
 	2975.000000,
 	"2012eb59-393a-4794-b96b-60956c1d997a");
 INSERT INTO DIM_CON
 	VALUES ("d1ad7acf-6f85-4001-bf00-acce95429097",
-	4703.000000,
+	4740.000000,
 	3013.000000,
 	"2012eb59-393a-4794-b96b-60956c1d997a");
 INSERT INTO DIM_CON
@@ -964,6 +710,11 @@ INSERT INTO DIM_CON
 	VALUES ("e59cfc78-74da-4231-b541-df23fb3882b6",
 	4668.000000,
 	2916.000000,
+	"2012eb59-393a-4794-b96b-60956c1d997a");
+INSERT INTO DIM_CON
+	VALUES ("26c4a3d8-32da-40b4-9be4-2d92c74404b6",
+	4763.000000,
+	3013.000000,
 	"2012eb59-393a-4794-b96b-60956c1d997a");
 INSERT INTO GD_GE
 	VALUES ("09d0506e-b3aa-4433-9759-7104e95163e5",
@@ -1040,7 +791,7 @@ INSERT INTO GD_LS
 	"ccab5828-e2b1-442e-a051-4179c51d335a");
 INSERT INTO DIM_WAY
 	VALUES ("30c9746d-a634-4f5e-84bc-610c3c67481f",
-	4808.000000,
+	4844.000000,
 	2975.000000,
 	"09d0506e-b3aa-4433-9759-7104e95163e5",
 	"00000000-0000-0000-0000-000000000000",
@@ -1066,218 +817,118 @@ INSERT INTO DIM_ED
 	"0475eaab-9e74-4a98-b0ec-9fe246c31116",
 	"09d0506e-b3aa-4433-9759-7104e95163e5");
 INSERT INTO GD_GE
-	VALUES ("c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	"c0131212-9e9e-451d-af90-a422cf95335d",
-	"0ef68352-ef14-4f48-8c6a-b1874e94165d",
+	"d07125ab-1ee4-4023-b161-caae3d8b9454",
 	24,
 	0,
 	'Tanks::Components::Configuration::TankFarm::R6');
 INSERT INTO GD_CON
-	VALUES ("c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO GD_CTXT
-	VALUES ("0d1865a8-e47d-4c6f-b1ce-dbffa62440ad",
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("eba570a5-b021-4ab1-b234-7e0509cec9f9",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	0,
 	0.000000,
 	0.000000);
 INSERT INTO DIM_ND
 	VALUES (0.000000,
 	0.000000,
-	"0d1865a8-e47d-4c6f-b1ce-dbffa62440ad");
+	"eba570a5-b021-4ab1-b234-7e0509cec9f9");
 INSERT INTO DIM_GE
-	VALUES (4714.000000,
+	VALUES (4773.000000,
 	3023.000000,
-	"0d1865a8-e47d-4c6f-b1ce-dbffa62440ad",
+	"eba570a5-b021-4ab1-b234-7e0509cec9f9",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
-	VALUES ("0d1865a8-e47d-4c6f-b1ce-dbffa62440ad",
+	VALUES ("eba570a5-b021-4ab1-b234-7e0509cec9f9",
 	0,
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO GD_CTXT
-	VALUES ("f628076d-e759-41e2-8df7-57d3264a776b",
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("032d3fb1-da63-4bc8-8c9d-e79c1384e881",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	2,
 	0.000000,
 	0.000000);
 INSERT INTO DIM_ND
 	VALUES (0.000000,
 	0.000000,
-	"f628076d-e759-41e2-8df7-57d3264a776b");
+	"032d3fb1-da63-4bc8-8c9d-e79c1384e881");
 INSERT INTO DIM_GE
-	VALUES (4717.000000,
-	3303.000000,
-	"f628076d-e759-41e2-8df7-57d3264a776b",
+	VALUES (4769.000000,
+	3078.000000,
+	"032d3fb1-da63-4bc8-8c9d-e79c1384e881",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
-	VALUES ("f628076d-e759-41e2-8df7-57d3264a776b",
+	VALUES ("032d3fb1-da63-4bc8-8c9d-e79c1384e881",
 	0,
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO GD_CTXT
-	VALUES ("e98bfcdb-4e5d-4a32-a4cf-6552ccbb2462",
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("567dc542-aa6d-4381-97ff-51739162620d",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	1,
 	0.000000,
 	0.000000);
 INSERT INTO DIM_ND
 	VALUES (0.000000,
 	0.000000,
-	"e98bfcdb-4e5d-4a32-a4cf-6552ccbb2462");
+	"567dc542-aa6d-4381-97ff-51739162620d");
 INSERT INTO DIM_GE
-	VALUES (4912.000000,
-	3354.000000,
-	"e98bfcdb-4e5d-4a32-a4cf-6552ccbb2462",
+	VALUES (4911.000000,
+	3124.000000,
+	"567dc542-aa6d-4381-97ff-51739162620d",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
-	VALUES ("e98bfcdb-4e5d-4a32-a4cf-6552ccbb2462",
+	VALUES ("567dc542-aa6d-4381-97ff-51739162620d",
 	0,
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO GD_LS
-	VALUES ("01479544-b85e-4b11-83c9-18403cc60466",
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("585edcd7-6acc-4df5-85e6-f449e3086243",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	"00000000-0000-0000-0000-000000000000",
-	"17b7ae2a-8483-4a63-b7f7-18663dd2d319",
-	"4cdb9565-b5e6-42df-9110-aa4acd6df494");
+	"347952a2-efeb-4c8b-ba27-c2f74312bd1f",
+	"435155c6-f921-4c16-ae89-c10c2b1bfe59");
 INSERT INTO GD_LS
-	VALUES ("b2763b96-862f-4833-9f72-0d603c31ced2",
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
-	"01479544-b85e-4b11-83c9-18403cc60466",
-	"4cdb9565-b5e6-42df-9110-aa4acd6df494",
-	"4feb1629-9bf2-4ee2-94ff-5d6d08af2666");
+	VALUES ("30b6cfcf-a7d9-4e4f-8912-f19d91f8c916",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
+	"585edcd7-6acc-4df5-85e6-f449e3086243",
+	"435155c6-f921-4c16-ae89-c10c2b1bfe59",
+	"d05dc68f-ec69-442f-acac-7e7466038fde");
 INSERT INTO DIM_WAY
-	VALUES ("17b7ae2a-8483-4a63-b7f7-18663dd2d319",
-	4703.000000,
+	VALUES ("347952a2-efeb-4c8b-ba27-c2f74312bd1f",
+	4763.000000,
 	3013.000000,
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
-	VALUES ("4feb1629-9bf2-4ee2-94ff-5d6d08af2666",
+	VALUES ("d05dc68f-ec69-442f-acac-7e7466038fde",
 	4980.000000,
-	3348.000000,
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	3114.000000,
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	"00000000-0000-0000-0000-000000000000",
-	"17b7ae2a-8483-4a63-b7f7-18663dd2d319");
+	"347952a2-efeb-4c8b-ba27-c2f74312bd1f");
 INSERT INTO DIM_WAY
-	VALUES ("4cdb9565-b5e6-42df-9110-aa4acd6df494",
-	4703.000000,
-	3348.000000,
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("435155c6-f921-4c16-ae89-c10c2b1bfe59",
+	4763.000000,
+	3114.000000,
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_GE
 	VALUES (0.000000,
 	0.000000,
-	"c65206cc-331e-4883-8daa-ac231ae870f8",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
-	VALUES ("c65206cc-331e-4883-8daa-ac231ae870f8",
+	VALUES ("16811214-b37a-47a8-aa96-4acc32f1e2a3",
 	0,
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ED
-	VALUES ("d1ad7acf-6f85-4001-bf00-acce95429097",
-	"6711babe-c8ca-43bd-98b9-6f9c0e5993b3",
-	"c65206cc-331e-4883-8daa-ac231ae870f8");
-INSERT INTO GD_GE
-	VALUES ("6c6cf901-c82f-4bb1-b540-b564778e891d",
-	"c0131212-9e9e-451d-af90-a422cf95335d",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	34,
-	0,
-	'Tanks::Components::Configuration::TankFarm::R1::Valve');
-INSERT INTO GD_CON
-	VALUES ("6c6cf901-c82f-4bb1-b540-b564778e891d",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_CTXT
-	VALUES ("b85f03b0-caca-4a7e-9c82-fa52506c4a99",
-	"6c6cf901-c82f-4bb1-b540-b564778e891d",
-	0,
-	0.000000,
-	0.000000);
-INSERT INTO DIM_ND
-	VALUES (0.000000,
-	0.000000,
-	"b85f03b0-caca-4a7e-9c82-fa52506c4a99");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"b85f03b0-caca-4a7e-9c82-fa52506c4a99",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("b85f03b0-caca-4a7e-9c82-fa52506c4a99",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_CTXT
-	VALUES ("524a83c0-97a4-48dc-8ddb-67d6056ab3c9",
-	"6c6cf901-c82f-4bb1-b540-b564778e891d",
-	2,
-	0.000000,
-	0.000000);
-INSERT INTO DIM_ND
-	VALUES (0.000000,
-	0.000000,
-	"524a83c0-97a4-48dc-8ddb-67d6056ab3c9");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"524a83c0-97a4-48dc-8ddb-67d6056ab3c9",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("524a83c0-97a4-48dc-8ddb-67d6056ab3c9",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_CTXT
-	VALUES ("9fa56982-7f77-4d4d-8d11-50692003cd4f",
-	"6c6cf901-c82f-4bb1-b540-b564778e891d",
-	1,
-	0.000000,
-	0.000000);
-INSERT INTO DIM_ND
-	VALUES (0.000000,
-	0.000000,
-	"9fa56982-7f77-4d4d-8d11-50692003cd4f");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"9fa56982-7f77-4d4d-8d11-50692003cd4f",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("9fa56982-7f77-4d4d-8d11-50692003cd4f",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_LS
-	VALUES ("b7c0cd69-2f30-413a-9538-e9ff8078aac1",
-	"6c6cf901-c82f-4bb1-b540-b564778e891d",
-	"00000000-0000-0000-0000-000000000000",
-	"1b5893f1-cd1b-4a85-aa6a-be9fb037cefb",
-	"47fe3bc9-a0ab-468e-bb31-705614013294");
-INSERT INTO DIM_WAY
-	VALUES ("1b5893f1-cd1b-4a85-aa6a-be9fb037cefb",
-	5027.000000,
-	3276.000000,
-	"6c6cf901-c82f-4bb1-b540-b564778e891d",
-	"00000000-0000-0000-0000-000000000000",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_WAY
-	VALUES ("47fe3bc9-a0ab-468e-bb31-705614013294",
-	5027.000000,
-	3227.000000,
-	"6c6cf901-c82f-4bb1-b540-b564778e891d",
-	"00000000-0000-0000-0000-000000000000",
-	"1b5893f1-cd1b-4a85-aa6a-be9fb037cefb");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"6c6cf901-c82f-4bb1-b540-b564778e891d",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("6c6cf901-c82f-4bb1-b540-b564778e891d",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ED
-	VALUES ("cc5f420e-4fcb-452b-88d0-c6b00a24956f",
-	"4ce8ab6a-83c7-4b6c-bc5f-f1620224c131",
-	"6c6cf901-c82f-4bb1-b540-b564778e891d");
+	VALUES ("26c4a3d8-32da-40b4-9be4-2d92c74404b6",
+	"9822b08b-9fbd-433b-81af-6c49e104e544",
+	"16811214-b37a-47a8-aa96-4acc32f1e2a3");
 INSERT INTO DIM_DIA
 	VALUES ("c0131212-9e9e-451d-af90-a422cf95335d",
 	'',
@@ -1285,86 +936,6 @@ INSERT INTO DIM_DIA
 	0.000000,
 	0.000000,
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO R_ASSOC
-	VALUES ("c56b9aed-77dc-4c64-b373-fcab14add36a");
-INSERT INTO R_REL
-	VALUES ("c56b9aed-77dc-4c64-b373-fcab14add36a",
-	1,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO R_AONE
-	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"3cf39530-c6fc-4750-9eda-ec0c7f3e3b2b",
-	0,
-	0,
-	'is other side of');
-INSERT INTO R_RTO
-	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"3cf39530-c6fc-4750-9eda-ec0c7f3e3b2b",
-	-1);
-INSERT INTO R_OIR
-	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"3cf39530-c6fc-4750-9eda-ec0c7f3e3b2b",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO O_OBJ_PROXY
-	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
-	'ValveEnd',
-	5,
-	'ValveEnd',
-	'Each valve has two ''ends''; each end connects either to a tank or to a pipe end.
-Valves are non-directional: the ends cannot be considered to be inlet or outlet.
-Flow paths can be developed in any direction.',
-	"00000000-0000-0000-0000-000000000000",
-	'./ValveEnd/ValveEnd.xtuml');
-INSERT INTO R_AOTH
-	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"813b996d-b585-43aa-92b4-d4b8211718aa",
-	0,
-	0,
-	'is one side of');
-INSERT INTO R_RTO
-	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"813b996d-b585-43aa-92b4-d4b8211718aa",
-	-1);
-INSERT INTO R_OIR
-	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"813b996d-b585-43aa-92b4-d4b8211718aa",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO R_ASSR
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"5b53f996-f6e0-4613-86f3-0f778e37bdd1",
-	0);
-INSERT INTO R_RGO
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"5b53f996-f6e0-4613-86f3-0f778e37bdd1");
-INSERT INTO R_OIR
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	"c56b9aed-77dc-4c64-b373-fcab14add36a",
-	"5b53f996-f6e0-4613-86f3-0f778e37bdd1",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO O_OBJ_PROXY
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	'Valve',
-	2,
-	'Valve',
-	'A valve controls flow through it. It may be either open or closed.
-Each ''end'' of a valve connects either to a tank or a pipe end.',
-	"00000000-0000-0000-0000-000000000000",
-	'./Valve/Valve.xtuml');
-INSERT INTO PE_PE
-	VALUES ("c56b9aed-77dc-4c64-b373-fcab14add36a",
-	1,
-	"50aa1acf-689e-418a-8986-88774b86794f",
-	"00000000-0000-0000-0000-000000000000",
-	9);
 INSERT INTO R_SIMP
 	VALUES ("66ae6674-ca6c-4f66-9eaf-d550eb2a17c4");
 INSERT INTO R_REL
@@ -1424,7 +995,7 @@ INSERT INTO R_SIMP
 	VALUES ("4326db2f-f0c3-416e-8698-8abe0f59445c");
 INSERT INTO R_REL
 	VALUES ("4326db2f-f0c3-416e-8698-8abe0f59445c",
-	3,
+	1,
 	'',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO R_PART
@@ -1449,7 +1020,7 @@ INSERT INTO O_OBJ_PROXY
 	'Tank',
 	1,
 	'Tank',
-	'',
+	'A tank represents an end node in a network which represents connectivity across valves and pipes.',
 	"00000000-0000-0000-0000-000000000000",
 	'./Tank/Tank.xtuml');
 INSERT INTO R_PART
@@ -1469,6 +1040,16 @@ INSERT INTO R_OIR
 	"4326db2f-f0c3-416e-8698-8abe0f59445c",
 	"f2e8ce84-5569-4bcd-92e2-255d40d3418c",
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_OBJ_PROXY
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
+	'Valve',
+	5,
+	'Valve',
+	'Each valve has two ''ends''; each end connects either to a tank or to a pipe end.
+Valves are non-directional: the ends cannot be considered to be inlet or outlet.
+Flow paths can be developed in any direction.',
+	"00000000-0000-0000-0000-000000000000",
+	'./Valve/Valve.xtuml');
 INSERT INTO PE_PE
 	VALUES ("4326db2f-f0c3-416e-8698-8abe0f59445c",
 	1,
@@ -1503,7 +1084,7 @@ INSERT INTO R_PART
 	VALUES ("17b18e31-1e24-4787-a808-0e757e4fa330",
 	"b7d8c2b2-667b-4a8a-a2f8-013debd7aea8",
 	"dc3c5d2b-eb1e-4756-a016-f0e06f351c8d",
-	0,
+	1,
 	1,
 	'is attached to');
 INSERT INTO R_RTO
@@ -1592,48 +1173,48 @@ INSERT INTO PE_PE
 	"00000000-0000-0000-0000-000000000000",
 	9);
 INSERT INTO R_SIMP
-	VALUES ("0ef68352-ef14-4f48-8c6a-b1874e94165d");
+	VALUES ("d07125ab-1ee4-4023-b161-caae3d8b9454");
 INSERT INTO R_REL
-	VALUES ("0ef68352-ef14-4f48-8c6a-b1874e94165d",
+	VALUES ("d07125ab-1ee4-4023-b161-caae3d8b9454",
 	6,
 	'',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO R_PART
 	VALUES ("ef3c7448-fef4-44f4-9017-8b422ebea783",
-	"0ef68352-ef14-4f48-8c6a-b1874e94165d",
-	"1ad0e82b-d7af-416f-b954-e6cf92cf30de",
+	"d07125ab-1ee4-4023-b161-caae3d8b9454",
+	"24bd4710-060c-4ef2-aa14-33cc4884c748",
 	0,
 	1,
 	'is in a connected');
 INSERT INTO R_RTO
 	VALUES ("ef3c7448-fef4-44f4-9017-8b422ebea783",
-	"0ef68352-ef14-4f48-8c6a-b1874e94165d",
-	"1ad0e82b-d7af-416f-b954-e6cf92cf30de",
+	"d07125ab-1ee4-4023-b161-caae3d8b9454",
+	"24bd4710-060c-4ef2-aa14-33cc4884c748",
 	-1);
 INSERT INTO R_OIR
 	VALUES ("ef3c7448-fef4-44f4-9017-8b422ebea783",
-	"0ef68352-ef14-4f48-8c6a-b1874e94165d",
-	"1ad0e82b-d7af-416f-b954-e6cf92cf30de",
+	"d07125ab-1ee4-4023-b161-caae3d8b9454",
+	"24bd4710-060c-4ef2-aa14-33cc4884c748",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO R_PART
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	"0ef68352-ef14-4f48-8c6a-b1874e94165d",
-	"2c5c777a-8837-4033-b8a6-99f02678fe05",
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"d07125ab-1ee4-4023-b161-caae3d8b9454",
+	"71cd6244-54f9-40d6-acab-a4217a486c5c",
 	1,
 	1,
 	'traverses');
 INSERT INTO R_RTO
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	"0ef68352-ef14-4f48-8c6a-b1874e94165d",
-	"2c5c777a-8837-4033-b8a6-99f02678fe05",
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"d07125ab-1ee4-4023-b161-caae3d8b9454",
+	"71cd6244-54f9-40d6-acab-a4217a486c5c",
 	-1);
 INSERT INTO R_OIR
-	VALUES ("f95b1e99-7609-4fd2-8cab-ac014cfed61c",
-	"0ef68352-ef14-4f48-8c6a-b1874e94165d",
-	"2c5c777a-8837-4033-b8a6-99f02678fe05",
+	VALUES ("1d5ab4c5-7383-4769-aedb-d550e0681969",
+	"d07125ab-1ee4-4023-b161-caae3d8b9454",
+	"71cd6244-54f9-40d6-acab-a4217a486c5c",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO PE_PE
-	VALUES ("0ef68352-ef14-4f48-8c6a-b1874e94165d",
+	VALUES ("d07125ab-1ee4-4023-b161-caae3d8b9454",
 	1,
 	"50aa1acf-689e-418a-8986-88774b86794f",
 	"00000000-0000-0000-0000-000000000000",
@@ -1642,104 +1223,86 @@ INSERT INTO S_SYNC
 	VALUES ("d71a8b6e-feaf-4587-91ca-ed4d3bfe4841",
 	"00000000-0000-0000-0000-000000000000",
 	'CreateConfiguration',
-	'',
+	'Create the instances which represent a network of valves and pipes which connect tanks in arbitrary configurations.',
 	'// Create tanks with their isolation valves.
 create object instance tank of Tank;
-tank.TankIdentifier = "Tank1";
+tank.Name = "Tank1";
 create object instance valve1 of Valve;
 valve1.Name = "Valve1"; 
-create object instance valve1A of ValveEnd;
-valve1A.Name = "valve1A";
-create object instance valve1B of ValveEnd;
-valve1B.Name = "valve1B";
-relate valve1A to valve1B across R1.''is one side of'' using valve1;
-relate valve1A to tank across R3.''acesses'';
+relate valve1 to tank across R1.''acesses'';
 create object instance pipeEnd1 of PipeEnd;
-relate valve1B to pipeEnd1 across R2.''is attached to'';
+relate valve1 to pipeEnd1 across R2.''is attached to'';
 
 create object instance tank of Tank;
-tank.TankIdentifier = "Tank2";
+tank.Name = "Tank2";
 create object instance valve2 of Valve;
 valve2.Name = "Valve2"; 
-create object instance valve2A of ValveEnd;
-valve2A.Name = "valve2A";
-create object instance valve2B of ValveEnd;
-valve2B.Name = "valve2B";
-relate valve2A to valve2B across R1.''is one side of'' using valve2;
-relate valve2A to tank across R3.''acesses'';
+relate valve2 to tank across R1.''acesses'';
 create object instance pipeEnd2 of PipeEnd;
-relate valve2B to pipeEnd2 across R2.''is attached to'';
+relate valve2 to pipeEnd2 across R2.''is attached to'';
 
 create object instance tank of Tank;
-tank.TankIdentifier = "Tank3";
+tank.Name = "Tank3";
 create object instance valve3 of Valve;
 valve3.Name = "Valve3"; 
-create object instance valve3A of ValveEnd;
-valve3A.Name = "valve3A";
-create object instance valve3B of ValveEnd;
-valve3B.Name = "valve3B";
-relate valve3A to valve3B across R1.''is one side of'' using valve3;
-relate valve3A to tank across R3.''acesses'';
+relate valve3 to tank across R1.''acesses'';
 create object instance pipeEnd3 of PipeEnd;
-relate valve3B to pipeEnd3 across R2.''is attached to'';
+relate valve3 to pipeEnd3 across R2.''is attached to'';
 
 create object instance tank of Tank;
-tank.TankIdentifier = "Tank4";
+tank.Name = "Tank4";
 create object instance valve4_1 of Valve;
 valve4_1.Name = "Valve4_1"; 
-create object instance valve4_1A of ValveEnd;
-valve4_1A.Name = "valve4_1A";
-create object instance valve4_1B of ValveEnd;
-valve4_1B.Name = "valve4_1B";
-relate valve4_1A to valve4_1B across R1.''is one side of'' using valve4_1;
-relate valve4_1A to tank across R3.''acesses'';
+relate valve4_1 to tank across R1.''acesses'';
 create object instance pipeEnd4_1 of PipeEnd;
-relate valve4_1B to pipeEnd4_1 across R2.''is attached to'';
+relate valve4_1 to pipeEnd4_1 across R2.''is attached to'';
 
 create object instance valve4_2 of Valve;
 valve4_2.Name = "Valve4_2"; 
-create object instance valve4_2A of ValveEnd;
-valve4_2A.Name = "valve4_2A";
-create object instance valve4_2B of ValveEnd;
-valve4_2B.Name = "valve4_2B";
-relate valve4_2A to valve4_2B across R1.''is one side of'' using valve4_2;
-relate valve4_2A to tank across R3.''acesses'';
+relate valve4_2 to tank across R1.''acesses'';
 create object instance pipeEnd4_2 of PipeEnd;
-relate valve4_2B to pipeEnd4_2 across R2.''is attached to'';
+relate valve4_2 to pipeEnd4_2 across R2.''is attached to'';
 
 create object instance tank of Tank;
-tank.TankIdentifier = "Tank5";
+tank.Name = "Tank5";
 create object instance valve5 of Valve;
 valve5.Name = "Valve5"; 
-create object instance valve5A of ValveEnd;
-valve5A.Name = "valve5A";
-create object instance valve5B of ValveEnd;
-valve5B.Name = "valve5B";
-relate valve5A to valve5B across R1.''is one side of'' using valve5;
-relate valve5A to tank across R3.''acesses'';
+relate valve5 to tank across R1.''acesses'';
 create object instance pipeEnd5 of PipeEnd;
-relate valve5B to pipeEnd5 across R2.''is attached to'';
+relate valve5 to pipeEnd5 across R2.''is attached to'';
+
+create object instance tank of Tank;
+tank.Name = "Tank6";
+create object instance valve6 of Valve;
+valve6.Name = "Valve6"; 
+relate valve6 to tank across R1.''acesses'';
+create object instance pipeEnd6 of PipeEnd;
+relate valve6 to pipeEnd6 across R2.''is attached to'';
+
+create object instance tank of Tank;
+tank.Name = "Tank7";
+create object instance valve7 of Valve;
+valve7.Name = "Valve7"; 
+relate valve7 to tank across R1.''acesses'';
+create object instance pipeEnd7 of PipeEnd;
+relate valve7 to pipeEnd7 across R2.''is attached to'';
 
 // Introduce a pipeline valve
-create object instance valveX of Valve;
-valveX.Name = "ValveX"; 
-create object instance valveXA of ValveEnd;
-valveXA.Name = "valveXA";
-create object instance valveXB of ValveEnd;
-valveXB.Name = "valveXB";
-relate valveXA to valveXB across R1.''is one side of'' using valveX;
-create object instance pipeEndXA of PipeEnd;
-relate valveXA to pipeEndXA across R2.''is attached to'';
-create object instance pipeEndXB of PipeEnd;
-relate valveXB to pipeEndXB across R2.''is attached to'';
+create object instance valve8 of Valve;
+valve8.Name = "Valve8"; 
+create object instance pipeEnd8A of PipeEnd;
+relate valve8 to pipeEnd8A across R2.''is attached to'';
+create object instance pipeEnd8B of PipeEnd;
+relate valve8 to pipeEnd8B across R2.''is attached to'';
 
 // Allow connections between tanks 1,3,4
 relate pipeEnd3 to pipeEnd1 across R4.''attaches to'';
 relate pipeEnd4_1 to pipeEnd1 across R4.''attaches to'';
 
-// Allow tank1 to reach tank 5 through valveX
-relate pipeEnd5 to pipeEndXA across R4.''attaches to'';
-relate pipeEndXB to pipeEnd1 across R4.''attaches to'';
+// Allow tank1 to reach tanks 6, 7 through valve8
+relate pipeEnd6 to pipeEnd8A across R4.''attaches to'';
+relate pipeEnd7 to pipeEnd8A across R4.''attaches to'';
+relate pipeEnd8B to pipeEnd1 across R4.''attaches to'';
 
 // Allow connections between tanks 2,4,5
 relate pipeEnd4_2 to pipeEnd2 across R4.''attaches to'';
@@ -1815,6 +1378,22 @@ INSERT INTO S_SYNC
 	0);
 INSERT INTO PE_PE
 	VALUES ("6d4b6483-ceb4-4b96-a14a-52593c749764",
+	1,
+	"50aa1acf-689e-418a-8986-88774b86794f",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("4c5854b1-f840-4942-85dd-c4b0a89dcebd",
+	"00000000-0000-0000-0000-000000000000",
+	'Test17',
+	'',
+	'FlowPath::FindPath( From:"Tank1", To:"Tank7" );',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0);
+INSERT INTO PE_PE
+	VALUES ("4c5854b1-f840-4942-85dd-c4b0a89dcebd",
 	1,
 	"50aa1acf-689e-418a-8986-88774b86794f",
 	"00000000-0000-0000-0000-000000000000",
